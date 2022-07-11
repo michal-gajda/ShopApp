@@ -4,7 +4,6 @@
     using System.Collections.Generic;
     using System.Linq;
     using Microsoft.AspNetCore.Http;
-    using Microsoft.EntityFrameworkCore;
     using Microsoft.Extensions.DependencyInjection;
 
     public class ShoppingCart
@@ -85,11 +84,12 @@
 
         public List<ShoppingCartItem> GetShoppingCartItems()
         {
-            return ShoppingCartItems ??
-                   (ShoppingCartItems =
-                       _appDbContext.ShoppingCartItems.Where(c => c.ShoppingCartId == ShoppingCartId)
-                           .Include(s => s.Product)
-                           .ToList());
+            return new List<ShoppingCartItem>();
+            //return ShoppingCartItems ??
+            //       (ShoppingCartItems =
+            //           _appDbContext.ShoppingCartItems.Where(c => c.ShoppingCartId == ShoppingCartId)
+            //               .Include(s => s.Product)
+            //               .ToList());
         }
 
         public void ClearCart()
