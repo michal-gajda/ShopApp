@@ -1,9 +1,11 @@
 ﻿using System;
 using Microsoft.EntityFrameworkCore.Migrations;
 
+#nullable disable
+
 namespace ShopApp.Migrations
 {
-    public partial class InitialMigration : Migration
+    public partial class Init : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
@@ -263,8 +265,7 @@ namespace ShopApp.Migrations
                         name: "FK_ShoppingCartItems_Products_ProductId",
                         column: x => x.ProductId,
                         principalTable: "Products",
-                        principalColumn: "Id",
-                        onDelete: ReferentialAction.Restrict);
+                        principalColumn: "Id");
                 });
 
             migrationBuilder.InsertData(
@@ -288,16 +289,16 @@ namespace ShopApp.Migrations
                 values: new object[,]
                 {
                     { 1, 1, "", "https://gotoit.pl/wp-content/uploads/2021/06/sukienka1.png", "https://gotoit.pl/wp-content/uploads/2021/06/sukienka1.png", true, true, "Długi opis pobrany z bazy danych", "Sukienka 1", 124.95m, "Krótki opis pobrany z bazy danych" },
-                    { 4, 1, "", "https://gotoit.pl/wp-content/uploads/2021/06/sukienka2.png", "https://gotoit.pl/wp-content/uploads/2021/06/sukienka2.png", true, false, "Długi opis pobrany z bazy danych", "Sukienka 2", 155.95m, "Krótki opis pobrany z bazy danych" },
-                    { 7, 1, "", "https://gotoit.pl/wp-content/uploads/2021/06/sukienka3.png", "https://gotoit.pl/wp-content/uploads/2021/06/sukienka3.png", false, false, "Długi opis pobrany z bazy danych", "Sukienka 3", 15.90m, "Krótki opis pobrany z bazy danych" },
-                    { 9, 1, "", "https://gotoit.pl/wp-content/uploads/2021/06/sukienka4.png", "https://gotoit.pl/wp-content/uploads/2021/06/sukienka4.png", true, true, "Długi opis pobrany z bazy danych", "Sukienka 4", 1205.95m, "Krótki opis pobrany z bazy danych" },
-                    { 10, 1, "", "https://gotoit.pl/wp-content/uploads/2021/06/sukienka5.png", "https://gotoit.pl/wp-content/uploads/2021/06/sukienka5.png", true, false, "Długi opis pobrany z bazy danych", "Sukienka 5", 105.95m, "Krótki opis pobrany z bazy danych" },
                     { 2, 2, "", "https://gotoit.pl/wp-content/uploads/2021/06/spodnie1.png", "https://gotoit.pl/wp-content/uploads/2021/06/spodnie1.png", true, false, "Długi opis pobrany z bazy danych", "Spodnie 1", 518.95m, "Krótki opis pobrany z bazy danych" },
                     { 3, 2, "", "https://gotoit.pl/wp-content/uploads/2021/06/spodnie2.png", "https://gotoit.pl/wp-content/uploads/2021/06/spodnie2.png", true, false, "Długi opis pobrany z bazy danych", "Spodnie 2", 718.95m, "Krótki opis pobrany z bazy danych" },
-                    { 11, 2, "", "https://gotoit.pl/wp-content/uploads/2021/06/spodnie3.png", "https://gotoit.pl/wp-content/uploads/2021/06/spodnie3.png", false, false, "Długi opis pobrany z bazy danych", "Spodnie 3", 1800.95m, "Krótki opis pobrany z bazy danych" },
+                    { 4, 1, "", "https://gotoit.pl/wp-content/uploads/2021/06/sukienka2.png", "https://gotoit.pl/wp-content/uploads/2021/06/sukienka2.png", true, false, "Długi opis pobrany z bazy danych", "Sukienka 2", 155.95m, "Krótki opis pobrany z bazy danych" },
                     { 5, 3, "", "https://gotoit.pl/wp-content/uploads/2021/06/buty1.png", "https://gotoit.pl/wp-content/uploads/2021/06/buty1.png", true, false, "Długi opis pobrany z bazy danych", "Buty 1", 103.95m, "Krótki opis pobrany z bazy danych" },
                     { 6, 3, "", "https://gotoit.pl/wp-content/uploads/2021/06/buty2.png", "https://gotoit.pl/wp-content/uploads/2021/06/buty2.png", true, false, "Długi opis pobrany z bazy danych", "Buty 2", 177.95m, "Krótki opis pobrany z bazy danych" },
-                    { 8, 3, "", "https://gotoit.pl/wp-content/uploads/2021/06/buty3.png", "https://gotoit.pl/wp-content/uploads/2021/06/buty3.png", true, true, "Długi opis pobrany z bazy danych", "Buty 3", 192.95m, "Krótki opis pobrany z bazy danych" }
+                    { 7, 1, "", "https://gotoit.pl/wp-content/uploads/2021/06/sukienka3.png", "https://gotoit.pl/wp-content/uploads/2021/06/sukienka3.png", false, false, "Długi opis pobrany z bazy danych", "Sukienka 3", 15.90m, "Krótki opis pobrany z bazy danych" },
+                    { 8, 3, "", "https://gotoit.pl/wp-content/uploads/2021/06/buty3.png", "https://gotoit.pl/wp-content/uploads/2021/06/buty3.png", true, true, "Długi opis pobrany z bazy danych", "Buty 3", 192.95m, "Krótki opis pobrany z bazy danych" },
+                    { 9, 1, "", "https://gotoit.pl/wp-content/uploads/2021/06/sukienka4.png", "https://gotoit.pl/wp-content/uploads/2021/06/sukienka4.png", true, true, "Długi opis pobrany z bazy danych", "Sukienka 4", 1205.95m, "Krótki opis pobrany z bazy danych" },
+                    { 10, 1, "", "https://gotoit.pl/wp-content/uploads/2021/06/sukienka5.png", "https://gotoit.pl/wp-content/uploads/2021/06/sukienka5.png", true, false, "Długi opis pobrany z bazy danych", "Sukienka 5", 105.95m, "Krótki opis pobrany z bazy danych" },
+                    { 11, 2, "", "https://gotoit.pl/wp-content/uploads/2021/06/spodnie3.png", "https://gotoit.pl/wp-content/uploads/2021/06/spodnie3.png", false, false, "Długi opis pobrany z bazy danych", "Spodnie 3", 1800.95m, "Krótki opis pobrany z bazy danych" }
                 });
 
             migrationBuilder.CreateIndex(
